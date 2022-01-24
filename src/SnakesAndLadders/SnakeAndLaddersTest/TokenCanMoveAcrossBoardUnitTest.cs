@@ -39,6 +39,7 @@ namespace SnakeAndLaddersTest
         public void UAT3()
         {
             _logicManager.Initialize(1);
+            _logicManager.ClearRules();
             _logicManager.MovePlayer(0, 3);
             _logicManager.MovePlayer(0, 4);
             var player = _logicManager.GetPlayer(0);

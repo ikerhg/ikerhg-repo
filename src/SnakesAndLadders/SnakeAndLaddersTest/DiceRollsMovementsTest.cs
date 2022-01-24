@@ -28,13 +28,10 @@ namespace SnakeAndLaddersTest
         [Description("Given the player rolls a 4. Then the token should move 4 spaces")]
         public void UAT2()
         {
-            var _mockLogicManager = new Mock<ILogicManager>();
-            _mockLogicManager.CallBase = true;
-            _mockLogicManager.Object.Initialize(1);
-            _mockLogicManager.Setup(m => m.RollADice()).Returns(4);
-
-            var response = _mockLogicManager.Object.RollDiceAndMove(0);
-            Assert.IsTrue(response!=null && !response.HasErrors && response.Player.CurrentSquare == 5);
+            _logicManager.Initialize(1);
+            _logicManager.MovePlayer(0, 4);
+            var player = _logicManager.GetPlayer(0);
+            Assert.IsTrue(player != null && player.CurrentSquare == 5);
         }
     }
 }

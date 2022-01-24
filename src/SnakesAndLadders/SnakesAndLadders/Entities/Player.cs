@@ -11,13 +11,10 @@ namespace SnakesAndLadders.Entities
         public int CurrentSquare { get; internal set; }
         public string Name { get; set; }
 
-        public bool HasWin { get; internal set; }
-
         internal Player()
         {
             CurrentSquare = 1;
             Name = string.Empty;
-            HasWin = false;
         }
     }
 }
